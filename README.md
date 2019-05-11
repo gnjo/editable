@@ -8,7 +8,7 @@ usage
 ```js
 //editable(classQuery,caller,debounceTime)
 //or
-//editable(classQuery,bool) //data-length mapping
+//editable(classQuery,bool) //data-length mapping for meta programming
 
 editable('.ed',(e)=>{
  console.log(e.target.textContent)
