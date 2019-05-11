@@ -13,7 +13,8 @@ usage
 editable('.ed',(e)=>{
  console.log(e.target.textContent)
 },300)
-
+```
+```js
 //multiple .ed and .ed2
 editable('.ed,.ed2',(e)=>{
  console.log(e.target.textContent)
