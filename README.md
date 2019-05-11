@@ -34,5 +34,5 @@ inner process
 2. check class for target
 3. if target, added the contenteditable="plaintext-only" and handle keyup and blur
  - if keyup, to caller
-4. if blur, event and attribute "contenteditable" delete
+4. if blur, delete event and attribute "contenteditable"
 ```
