@@ -36,3 +36,7 @@ inner process
  - if keyup, to caller
 4. if blur, delete event and attribute "contenteditable"
 ```
+careful
+```
+"plaintext-only" option chrome only, as of 2019
+```
