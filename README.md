@@ -47,11 +47,14 @@ CodeMirror wrapping
 
 ```js
 //completed detail
+codeableOption=opt;
+codeable(uniqQuery,caller) or codeable(uniqQuery,true) 
+
 //query target living only, need the document.body children
 codeableOption=opt;
 let ca=codeable('.ed',(e,cm)=>{//e.target.dataset.text//e.target})
 
-codeable('ed',true); //meta programming observe the target.dataset.text
+codeable('.ed',true); //meta programming observe the target.dataset.text
 
 ca.el
 ca.cm
