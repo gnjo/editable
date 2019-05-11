@@ -42,3 +42,6 @@ careful
 ```
 "plaintext-only" option chrome only, as of 2019
 ```
+# codeable
+CodeMirror wrapping
+
