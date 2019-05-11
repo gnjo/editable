@@ -50,10 +50,10 @@ CodeMirror wrapping
 codeableOption=opt;
 codeable(uniqQuery,caller) or codeable(uniqQuery,true) 
 
-e.target.dataset.codeableMode
-e.target.dataset.codeableText
-//data-codeable-mode
-//data-codeable-text
+e.target.dataset.mode
+e.target.dataset.text
+//data-mode
+//data-text
 
 //query target living only, need the document.body children
 codeableOption=opt;
