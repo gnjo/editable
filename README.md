@@ -1,4 +1,6 @@
 # editable
+demo https://codepen.io/gnjo/pen/MdyddX
+
 contenteditable wrapper
 ```js
 //pug
