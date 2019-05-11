@@ -27,3 +27,10 @@ usefull css
  word-break:break-all;
 } 
 ```
+inner process
+```
+1. fire the element click
+2. check class for target
+3. if target, added the contenteditable="plaintext-only" and handle keyup and blur
+4. if blur, event and attribute "contenteditable" delete
+```
