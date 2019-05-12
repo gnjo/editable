@@ -42,30 +42,3 @@ careful
 ```
 "plaintext-only" option chrome only, as of 2019
 ```
-# codeable
-CodeMirror wrapping
-
-```js
-//completed detail
-codeableOption=opt;
-codeable(uniqQuery,caller) or codeable(uniqQuery,true) 
-
-e.target.dataset.mode
-e.target.dataset.text
-//data-mode
-//data-text
-
-//query target living only, need the document.body children
-codeableOption=opt;
-let ca=codeable('.ed',(e,cm)=>{//e.target.dataset.text//e.target})
-
-codeable('.ed',true); //meta programming observe the target.dataset.text
-
-ca.el
-ca.cm
-ca.text
-ca.remove(false)//if false, ca.cm. true is all. ca.cm, ca.el 
-let text=ca.remove() //if remove, return text
-```
-
-
