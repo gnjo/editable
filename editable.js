@@ -140,9 +140,9 @@ fn.crc32 = function(str,hex=true) {
  e.target.dataset.text=text
 }
   ,lmap=function(e){
-   e.target.dataset.length=e.target.textContent.length;
-   //v1.6
+   //v1.6   
    ex(e)
+   e.target.dataset.length=e.target.textContent.length;
   }
   ,remove=function(e){
    let el=e.target
