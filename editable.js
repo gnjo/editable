@@ -6,6 +6,7 @@ v1.3 callback
 v1.4 input > keyup
 v1.45 debounce def 70
 v1.5 * wildcard
+v1.6 data-head data-headline data-lines data-timestamp data-crcnew data-crcold data-text
 */
 ;(function(root){
  //'use strict'; 
@@ -86,6 +87,29 @@ v1.5 * wildcard
   root._ =_;
 })(this)
  ;
+ let fn={}
+fn.crcTable=(function(){
+  var c,crcTable = [];
+  for(var n =0; n < 256; n++){
+    c = n;
+    for(var k =0; k < 8; k++){
+      c = ((c&1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1));
+    }
+    crcTable[n] = c;
+  }
+  return crcTable;
+})();//early gen
+fn.crc32 = function(str,hex=true) {
+  var crcTable = fn.crcTable,pad=( (d,l)=>('000000000000000000'+d).slice(-1*l))
+  ,crc = 0 ^ (-1)
+  ;
+  for (var i = 0; i < str.length; i++ ) crc = (crc >>> 8) ^ crcTable[(crc ^ str.charCodeAt(i)) & 0xFF]
+  ;
+  crc = (crc ^ (-1)) >>> 0
+  ;
+  return (hex)?pad(crc.toString(16),8):crc
+}
+ 
  let is={}
  is.function = function(obj){return toString.call(obj) === '[object Function]'}
  ;
@@ -101,8 +125,24 @@ v1.5 * wildcard
    //let l=target.filter(d=>el.classList.contains(d)).length
    //return (l>0)?true:false;
   }
+  ,ex=function ex(e){
+ let text=e.target.textContent
+ ,ary=text.split('\n')
+ ,headline=ary.slice(0,1).pop()
+ ,crcnew=fn.crc32(text)
+ ,crcold=e.target.dataset.crcnew||crcnew
+ e.target.dataset.head=text.charAt(0)
+ e.target.dataset.headline=headline
+ e.target.dataset.lines=ary.length
+ e.target.dataset.timestamp=Date.now()
+ e.target.dataset.crcold=crcold 
+ e.target.dataset.crcnew=crcnew
+ e.target.dataset.text=text
+}
   ,lmap=function(e){
-   e.target.dataset.length=e.target.textContent.length
+   e.target.dataset.length=e.target.textContent.length;
+   //v1.6
+   ex(e)
   }
   ,remove=function(e){
    let el=e.target
