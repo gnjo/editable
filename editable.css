@@ -1,0 +1,47 @@
+html{
+ font:14px/1.3 monospace; 
+}
+body{
+ background-color:black;
+ color:white;
+ margin:4rem auto;
+ margin-bottom:80vh;
+ width:50rem;
+}
+
+.sub{color:#456}
+.sub::-webkit-scrollbar{width:0}
+
+.wipe{color:#456}
+
+.frame{
+ margin-bottom:1rem;
+ overflow-y:scroll; 
+}
+.ed{
+ padding:1rem 2rem;
+ white-space:pre-wrap;
+ word-break:break-all;
+ outline:none;
+ border:2px solid;
+}
+/*chrome bar*/
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 0px;
+  border: 2px solid black;
+}
+
+::-webkit-scrollbar {
+  background-color: black;
+  width: 12px;
+}
+
+::-webkit-scrollbar-button {
+  background-color: white;
+  height: 0px;
+  width: 0px;
+  border-radius: 0px;
+}
+
+::selection{background-color:#2cc;}
