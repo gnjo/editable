@@ -30,6 +30,16 @@ usefull css
  word-break:break-all;
 } 
 ```
+
+editableEx
+```css
+editableEx =true; //default false
+editable(...)
+//add dataset
+//text lines head headline timestamp crcold crcnew 
+
+```
+
 inner process
 ```
 1. fire the element click
