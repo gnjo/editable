@@ -7,6 +7,7 @@ v1.4 input > keyup
 v1.45 debounce def 70
 v1.5 * wildcard
 v1.6 data-head data-headline data-lines data-timestamp data-crcnew data-crcold data-text
+v1.7 editableEx flg
 */
 ;(function(root){
  //'use strict'; 
@@ -140,8 +141,8 @@ fn.crc32 = function(str,hex=true) {
  e.target.dataset.text=text
 }
   ,lmap=function(e){
-   //v1.6   
-   ex(e)
+   //v1.6 v1.7
+   if(root.editableEx) ex(e);
    e.target.dataset.length=e.target.textContent.length;
   }
   ,remove=function(e){
@@ -168,6 +169,7 @@ fn.crc32 = function(str,hex=true) {
   ;
   document.body.addEventListener('click',add)///
  }
+ root.editableEx=false;//v1.7
  root.editable=entry;
  /*usage
  editable('.xyz,.eeee',true) //target,data-length write flg
