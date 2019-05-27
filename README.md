@@ -32,7 +32,7 @@ usefull css
 ```
 
 editableEx
-```css
+```js
 editableEx =true; //default false
 editable(...)
 //add dataset
