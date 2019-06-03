@@ -118,6 +118,7 @@ fn.crc32 = function(str,hex=true) {
  ;
  
 function _lmap(e){
+ console.log(root.editableEx);
    //v1.6 v1.7
    if(root.editableEx){
  let text=e.target.textContent
