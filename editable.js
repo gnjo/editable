@@ -116,19 +116,10 @@ fn.crc32 = function(str,hex=true) {
  let is={}
  is.function = function(obj){return toString.call(obj) === '[object Function]'}
  ;
- function entry(_target,_flg=false,time=70){
-  if(!_target)return console.log('target empty')
-  let target =_target.replace(/\./g,'').split(',')
-  ,wild=(_target==='*')?true:false
-  ,caller=is.function(_flg)?_.debounce(_flg,time):void 0
-  ,flg=(caller)?void 0:_flg
-  ,hasClass=function(el){
-    if(wild) return true;
-    return !(target.filter(d=>el.classList.contains(d)).length===0)
-   //let l=target.filter(d=>el.classList.contains(d)).length
-   //return (l>0)?true:false;
-  }
-  ,ex=function ex(e){
+ 
+function _lmap(e){
+   //v1.6 v1.7
+   if(root.editableEx){
  let text=e.target.textContent
  ,ary=text.split('\n')
  ,headline=ary.slice(0,1).pop()
@@ -141,13 +132,24 @@ fn.crc32 = function(str,hex=true) {
  e.target.dataset.timestamp=Date.now()
  e.target.dataset.crcold=crcold 
  e.target.dataset.crcnew=crcnew
- e.target.dataset.text=text
-}
-  ,lmap=function(e){
-   //v1.6 v1.7
-   if(root.editableEx) ex(e);
+ e.target.dataset.text=text    
+   }
    e.target.dataset.length=e.target.textContent.length;
   }
+  
+ function entry(_target,_flg=false,time=70){
+  if(!_target)return console.log('target empty')
+  let target =_target.replace(/\./g,'').split(',')
+  ,wild=(_target==='*')?true:false
+  ,caller=is.function(_flg)?_.debounce(_flg,time):void 0
+  ,flg=(caller)?void 0:_flg
+  ,hasClass=function(el){
+    if(wild) return true;
+    return !(target.filter(d=>el.classList.contains(d)).length===0)
+   //let l=target.filter(d=>el.classList.contains(d)).length
+   //return (l>0)?true:false;
+  }
+  ,lmap=_lmap
   ,remove=function(e){
    let el=e.target
    el.removeAttribute('contenteditable')
@@ -170,9 +172,9 @@ fn.crc32 = function(str,hex=true) {
    ;
   }
   ;
-  root.editableLex=lmap; //editableLex({target:el})
   document.body.addEventListener('click',add)///
  }
+ root.editableLex=_lmap; //editableLex({target:el}) 
  root.editableEx=false;//v1.7
  root.editable=entry;
  /*usage
