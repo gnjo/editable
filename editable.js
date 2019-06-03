@@ -9,6 +9,7 @@ v1.5 * wildcard
 v1.6 data-head data-headline data-lines data-timestamp data-crcnew data-crcold data-text
 v1.7 editableEx flg
 v1.8 data-lines2 nihongo count line
+v1.9 editableLex
 */
 ;(function(root){
  //'use strict'; 
@@ -169,6 +170,7 @@ fn.crc32 = function(str,hex=true) {
    ;
   }
   ;
+  root.editableLex=lmap; //editableLex({target:el})
   document.body.addEventListener('click',add)///
  }
  root.editableEx=false;//v1.7
