@@ -136,7 +136,7 @@ fn.crc32 = function(str,hex=true) {
  e.target.dataset.head=text.charAt(0)
  e.target.dataset.headline=headline
  e.target.dataset.lines=ary.length
- e.target.dataset.lines2=Math.ceil((ary.length+0.1)/44)   
+ e.target.dataset.lines2=Math.ceil((text.length+0.1)/44)   
  e.target.dataset.timestamp=Date.now()
  e.target.dataset.crcold=crcold 
  e.target.dataset.crcnew=crcnew
