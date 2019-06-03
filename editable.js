@@ -8,6 +8,7 @@ v1.45 debounce def 70
 v1.5 * wildcard
 v1.6 data-head data-headline data-lines data-timestamp data-crcnew data-crcold data-text
 v1.7 editableEx flg
+v1.8 data-lines2 nihongo count line
 */
 ;(function(root){
  //'use strict'; 
@@ -135,6 +136,7 @@ fn.crc32 = function(str,hex=true) {
  e.target.dataset.head=text.charAt(0)
  e.target.dataset.headline=headline
  e.target.dataset.lines=ary.length
+ e.target.dataset.lines2=Math.ceil((ary.length+0.1)/44)   
  e.target.dataset.timestamp=Date.now()
  e.target.dataset.crcold=crcold 
  e.target.dataset.crcnew=crcnew
