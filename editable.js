@@ -142,6 +142,7 @@ fn.crc32 = function(str,hex=true) {
 }
   ,lmap=function(e){
    //v1.6 v1.7
+   console.log(root.editableEx)
    if(root.editableEx) ex(e);
    e.target.dataset.length=e.target.textContent.length;
   }
