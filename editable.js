@@ -175,7 +175,7 @@ function _lmap(e){
   document.body.addEventListener('click',add)///
  }
  root.editableLex=_lmap; //editableLex({target:el}) 
- root.editableEx=false;//v1.7
+ root.editableEx=false;//v1.7  
  root.editable=entry;
  /*usage
  editable('.xyz,.eeee',true) //target,data-length write flg
