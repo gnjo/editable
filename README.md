@@ -62,7 +62,7 @@ opt.numWidth='2.5rem' //
 opt.numColor='#456'
 opt.numDraw=()=>{return/**/}
 opt.ex=0 //1 is true
-opt.span=70 //debounce time
+opt.dt=70 //debounce time
 
 editable('',(ev)=>{},opt)
 ```
