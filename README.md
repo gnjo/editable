@@ -52,3 +52,21 @@ careful
 ```
 "plaintext-only" option chrome only, as of 2019
 ```
+
+editable and number
+```
+let opt={}
+opt.numStart=0
+opt.numFlg=0//1 is true
+opt.numWidth='2.5rem' //
+opt.numColor='#456'
+opt.numDraw=()=>{return/**/}
+
+editable('',(ev)=>{},opt)
+```
+
+
+
+
+
+
